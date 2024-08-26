@@ -5,16 +5,16 @@ public class PalindromeCheck {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter a string: ");
-        String originalString = scanner.nextLine();
+        String input = scanner.nextLine();
 
-        String cleanedString = originalString.replaceAll("\\s+", "").toLowerCase();
+        String reversed = new StringBuilder(input).reverse().toString();
 
-        String reversedString = new StringBuilder(cleanedString).reverse().toString();
-
-        if (cleanedString.equals(reversedString)) {
-            System.out.println(originalString + " is a palindrome.");
+        if (input.equals(reversed)) {
+            System.out.println("The string is a palindrome.");
         } else {
-            System.out.println(originalString + " is not a palindrome.");
+            System.out.println("The string is not a palindrome.");
         }
+
+        scanner.close();
     }
 }
